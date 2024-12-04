@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.Range;
 
@@ -12,6 +13,11 @@ public class LinerarSlides {
     public void init(HardwareMap hardwareMap) {
         this.leftLinearSlide = hardwareMap.get(DcMotorEx.class, "7");
         this.rightLinearSlide = hardwareMap.get(DcMotorEx.class, "6");
+
+
+        this.leftLinearSlide.setDirection(DcMotorSimple.Direction.REVERSE);
+        this.rightLinearSlide.setDirection(DcMotorSimple.Direction.FORWARD);
+
 
         this.leftLinearSlide.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         this.rightLinearSlide.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
